@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "ae8354eb-7c6b-45aa-90d8-48c7bc84ba79",
+		"name": "Warehouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11906032",
+		"_collection_link": "https://www.postman.com/athuldasspericorn/workspace/quotables/collection/11906032-ae8354eb-7c6b-45aa-90d8-48c7bc84ba79?action=share&source=collection_link&creator=11906032"
+	},
+	"item": [
+		{
+			"name": "Authentication API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"PM@gmail.com\", \"password\": \"User@123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Seller Product Inv Log",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwNjIyMTA5MywianRpIjoiY2JiMGRmYzEtZTRiNS00ZjM4LTk1NmYtZjBiMGIwNzA2OGU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IlBNQGdtYWlsLmNvbSIsIm5iZiI6MTcwNjIyMTA5MywiY3NyZiI6IjRlN2YwNzM2LWJlMTMtNDVlYi04NmE1LTY4ZjAzMDcyNTNkYSIsImV4cCI6MTcwNjgyNTg5M30.btcOJfJiPalgNG-T-nz-Kyu6EJTt7I6w553GlHKQrp0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"seller_details\":{\"sellerName\": \"seller test\", \"sellerGST\": \"2\"},\n\"product_details\": {\"productName\": \"product5\"},\n\"inv_log_details\": {\"quantity\": 10, \"category\":\"food\"}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/create/sellers/products/inv-log",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"create",
+						"sellers",
+						"products",
+						"inv-log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Seller Product Inv Log Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwNjIyMDE4NCwianRpIjoiMzkyNWM1YTEtYjU5Ny00NGRkLWJkZjctZGYwZmM3Y2ZlNzcxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IlBNQGdtYWlsLmNvbSIsIm5iZiI6MTcwNjIyMDE4NCwiY3NyZiI6Ijk5YzU4MTY3LTM1ZWItNDQ5NC1hMGJmLWJiOGVhZjZhN2ZlMiIsImV4cCI6MTcwNjgyNDk4NH0.4eRvJOzKKHwTKok0x9O-o51rlPYMmv0TwwV0Selk2W4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"inv_log_details\": {\n        \"id\": 1,\n        \"quantity\": 16,\n        \"category\": \"apparel\"\n    },\n    \"product_details\": {\n        \"id\": 1,\n        \"productName\": \"product8\"\n    },\n    \"seller_details\": {\n        \"id\": 1,\n        \"sellerName\": \"seller test\",\n        \"sellerGST\": \"2\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/update/sellers/products/inv-log",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"update",
+						"sellers",
+						"products",
+						"inv-log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/create_users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"create_users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weekly Product List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwNjIyMTIyNiwianRpIjoiYzE4MzBkOTctMDlmOC00MTA1LWJkNWMtMTVkMzRkYTRlNzljIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImZyb250ZW5kRGV2ZWxvcGVyQGdtYWlsLmNvbSIsIm5iZiI6MTcwNjIyMTIyNiwiY3NyZiI6ImUwNTU5ZjU4LTI2YmYtNDkwOS1iNTUwLTk0NTA4YzE5NTcwYyIsImV4cCI6MTcwNjgyNjAyNn0.D298XtXfWoDYycpvI6cM2OqWQiSgvp49ysoNkJDM6CU",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/products/weekly?start_date=2024-01-1&end_date=2024-01-30&seller_name=seller test",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						"weekly"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2024-01-1"
+						},
+						{
+							"key": "end_date",
+							"value": "2024-01-30"
+						},
+						{
+							"key": "seller_name",
+							"value": "seller test"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
