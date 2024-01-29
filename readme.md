@@ -1,4 +1,37 @@
+# Warehouse Management System
 
+## Project Structure
+
+The architecture used here is designed to separate each section as a package, aiming to reduce dependencies, enhance readability, and promote code reusability.
+
+### Project Components
+
+- **requirements.txt**: Lists all the required packages for the project.
+
+- **app/config**: Contains `config.py` for database connection details and other configurations.
+
+- **app/custom_decorators**: Custom decorators for field validation and role-based access validation.
+
+- **app/models**: Defines models for various tables, including `ProductMeta`, `InventoryLog`, `SellerMeta`, `RoleMapping`, and `User`.
+
+- **app/one_time_scripts**: Scripts for creating dummy users and roles.
+
+- **app/serializers.py**: Serializers for data validation.
+
+- **app/urls.py**: Routing of the API, with separate files for each API endpoint.
+
+- **app/views.py**: Business logic, neatly organized using utilities. Specific logic is split and added to utilities.
+  - **auth_view.py**: Contains Auth API to get an access token.
+  - **product_view.py**: Contains both the GET API to get products weekly, and POST/PUT API to create and update products.
+  - **user_view.py**: Contains the logic to create default users and roles.
+
+- **migrations**: Contains database migration scripts.
+
+- **.env**: Stores sensitive data like database name, password, etc.
+
+- **run.py**: Script to run the Flask application with the development server.
+
+## Project Setup
 loom video explaining the setup and working:
 
 # Loom Video Link: 
